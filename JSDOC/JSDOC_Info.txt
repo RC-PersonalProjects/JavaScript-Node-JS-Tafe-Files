@@ -1,0 +1,115 @@
+// JSDoc comment example:
+
+/**
+ * @name {number}
+ * @param
+ * @returns
+ * @type
+ */
+
+
+/*////////////////////////////////////////////
+JSDoc is a MARKUP LANGUAGE that uses JavaScript Comments for annotations
+The documentation made can then be accessed by various tools using
+accessible formats like HTML, and Rich Text Format. I think it can also be used with Typescript.
+ 
+JSDoc are basically ADVANCED COMMENTS.
+ 
+After NODE.JS is installed, you can install JSDoc to a folder with the command prompt.
+	>cd filepath
+	>npm install -g jsdoc			//After jsdoc is installed, I think you can access any folder for JSDoc usage 
+ 
+After that, just document your code appropriately for JSDoc tags.
+ 
+You can then have JSDoc documentation created with the shell command:
+	>jsdoc filename.js
+
+JSDoc features are more noticable in IDEs
+////////////////////////////////////////////
+////////////////////////////////////////////
+ 
+Each JSDoc comment block is started with two asterisks on a slash to work.
+The two asterisks at the top are MANDATORY, additonal asterisks for each line are for JSDOC standards.
+
+An asterisk should be added for each line of the comment, and ended like a standard multi-line comment
+/*
+
+HTML can be used like normal in SOME JSDoc comments.
+
+
+Comments are structured with TAGS, that begin with @.
+	eg		@param
+
+Type annotations:
+You can note the type of an entity using a type name in braces{}.
+	eg.		Single Type:		@param {string name}
+			Multiple Types:		@param {string|number} idCode
+			Array Types:		@param {string[]} names
+	
+	Depending on tags called, descriptions and text may be displayed in/out of order, or not at all.
+	It seems because a tag automatically overwrites the default comment/description tag generic text falls under?
+	
+	Some tags are automatically set as well, like @name, and will pull from a default found value. NO THIS IS A LIE YOU MUST SE T NAME
+	
+	@fileOverview		Should be first tag, and be used to declare every function(?)'s purpose. A second tag declaration
+						WILL make a new fileOverview on the same file on the same page, with its own unique tags to add
+	@version			Declare Version
+	@name				Overwrites the default name of the entity in JSDoc
+	@author				Declare Authors, line-by-line for multiple authors in a single comment.
+						Different JSDoc comments can be assigned their own authors.
+	@description		Overwrites and writes descriptive text for the entity.
+	@example			Showcase examples of your code.
+	
+	@type				Declares type, with a {datatype} and name after. Should have a description of it on the line before.
+						Seems to only work on only the object that first pops up after the JSdoc comment?
+							eg		@type {string}
+							{string} can be any type including non-standard ones(?).
+							{number}
+							{integer} //integer doesn't exist, use {number}?
+							{Array}
+							{Array<type>}		{Array<number>} ect, if you want an array to be of only a specific type
+							
+							{{objectProperty1: string, objectProperty2: number}}
+							For Classes/Objects? Replace properties with actual identifiers.
+							Will error if there are more properties in object not commented.
+	@param				@type used for function arguments. Can be declared more than once per comment for each parameter/argument.
+							eg		* This is a function that does things
+									* @param {number} amount - This is the amount			- isn't needed, anything after identifer is description
+									* @param {number} tax - This as well
+	
+	@returns			@type for the returned value of a function.
+						eg		* @returns {number} - This returns a number
+							
+	// @ts-check		For IDEs(?), you can use this to quickly set a 'type-checker'(?) to see if certain values
+						are the same as their JSDoc Declarations. Must be declared as a standard comment, not JSDoc. 
+
+All text written in the same comment, until either a NEW TAG or the comment ends,
+will apply to the tag.
+eg.		/**
+		 *@author Reece
+		 * David
+		 * Clarke
+		 *@author Neil          Breen
+		 */
+	Becomes:
+		Author: Reece David Clarke
+				Neil Breen
+	in HTML
+
+
+All spaces and new lines will apply a SINGLE SPACE between characters, regardless of how many spaces are used.
+ 
+
+ 
+////////////////////////////////////////////*/
+ 
+/**
+ * function adds {string} a and b together
+ * @param {number} a
+ * @param {number} b
+ * returns {number}
+ */
+function add(a,b)
+{
+ return a+b;
+}
